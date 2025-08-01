@@ -7,11 +7,3 @@ det gen(ic):
                 a,b = map(str.strip,e.split(op))
                 ac.append(f"{ins} {r[t%8]},{a},{b}")
                 break
-        else:
-            ac.append(f"MOV {r[t%8]},{e}")
-        ac.append(f"MOV {r} {r[t%8]}")
-        t+=1
-    return ac
-ic=["t1=a+b","t2=c+d","t3=t1*t2"]
-for line in gen(ic):
-    print(line)
